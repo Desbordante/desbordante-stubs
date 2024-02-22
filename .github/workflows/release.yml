@@ -12,6 +12,11 @@ jobs:
         python-version: [3.11]
         poetry-version: [1.7.1]
         os: [ubuntu-latest]
+    environment:
+      name: pypi
+      url: https://pypi.org/p/desbordante-stubs
+    permissions:
+      id-token: write
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -22,9 +27,9 @@ jobs:
         uses: abatilo/actions-poetry@v3
         with:
           poetry-version: ${{ matrix.poetry-version }}
+      - name: Builc
+          poetry build 
       - name: Publish
-        env:
-          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
-        run: |
-          poetry config pypi-token.pypi $PYPI_TOKEN
-          poetry publish --build
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        packages-dir: dist/
