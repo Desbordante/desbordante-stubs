@@ -2,7 +2,7 @@ name: Release
 on:
   release:
     types:
-      - created
+      - published
 
 jobs:
   publish:
@@ -27,9 +27,9 @@ jobs:
         uses: abatilo/actions-poetry@v3
         with:
           poetry-version: ${{ matrix.poetry-version }}
-      - name: Builc
-          poetry build 
+      - name: Build
+        run: poetry build 
       - name: Publish
-      uses: pypa/gh-action-pypi-publish@release/v1
-      with:
-        packages-dir: dist/
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          packages-dir: dist/
