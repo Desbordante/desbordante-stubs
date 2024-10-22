@@ -11,6 +11,7 @@ __all__ = [
     "FastFDs",
     "FdMine",
     "HyFD",
+    "PFDTane",
     "Pyro",
     "Tane",
 ]
@@ -18,90 +19,118 @@ __all__ = [
 class Aid(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
-    is_null_equal_null: specify whether two NULLs should be considered equal
     """
+
     def __init__(self) -> None: ...
 
 class DFD(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     threads: number of threads to use. If 0, then as many threads are used as the hardware can handle concurrently.
     """
+
     def __init__(self) -> None: ...
 
 class Depminer(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     """
+
     def __init__(self) -> None: ...
 
 class FDep(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
-    is_null_equal_null: specify whether two NULLs should be considered equal
     """
+
     def __init__(self) -> None: ...
 
 class FUN(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     """
+
     def __init__(self) -> None: ...
 
 class FastFDs(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
-    max_lhs: max considered LHS size
     threads: number of threads to use. If 0, then as many threads are used as the hardware can handle concurrently.
     """
+
     def __init__(self) -> None: ...
 
 class FdMine(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     """
+
     def __init__(self) -> None: ...
 
 class HyFD(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     """
+
+    def __init__(self) -> None: ...
+
+class PFDTane(desbordante.fd.FdAlgorithm):
+    """
+    Options:
+    max_lhs: max considered LHS size
+    table: table processed by the algorithm
+    is_null_equal_null: specify whether two NULLs should be considered equal
+    error: error threshold value for Approximate FD algorithms
+    error_measure: PFD error measure to use
+    [per_tuple|per_value]
+    """
+
     def __init__(self) -> None: ...
 
 class Pyro(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     error: error threshold value for Approximate FD algorithms
-    max_lhs: max considered LHS size
     threads: number of threads to use. If 0, then as many threads are used as the hardware can handle concurrently.
     seed: RNG seed
     """
+
     def __init__(self) -> None: ...
 
 class Tane(desbordante.fd.FdAlgorithm):
     """
     Options:
+    max_lhs: max considered LHS size
     table: table processed by the algorithm
     is_null_equal_null: specify whether two NULLs should be considered equal
     error: error threshold value for Approximate FD algorithms
-    max_lhs: max considered LHS size
     """
+
     def __init__(self) -> None: ...
 
 Default = HyFD

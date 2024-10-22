@@ -2,13 +2,15 @@ from __future__ import annotations
 import desbordante
 import desbordante.fd_verification
 
-__all__ = ["Default", "FDVerifier"]
+__all__ = ["Default", "DynamicFDVerifier"]
 
-class FDVerifier(desbordante.Algorithm):
+class DynamicFDVerifier(desbordante.Algorithm):
     """
     Options:
     table: table processed by the algorithm
-    is_null_equal_null: specify whether two NULLs should be considered equal
+    insert: Rows to be inserted into the table using the insert operation
+    delete: Rows to be deleted from the table using the delete operation
+    update: Rows to be replaced in the table using the update operation
     lhs_indices: LHS column indices
     rhs_indices: RHS column indices
     """
@@ -18,6 +20,5 @@ class FDVerifier(desbordante.Algorithm):
     def get_error(self) -> float: ...
     def get_highlights(self) -> list[desbordante.fd_verification.Highlight]: ...
     def get_num_error_clusters(self) -> int: ...
-    def get_num_error_rows(self) -> int: ...
 
-Default = FDVerifier
+Default = DynamicFDVerifier

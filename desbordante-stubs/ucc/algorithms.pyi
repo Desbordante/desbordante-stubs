@@ -10,6 +10,7 @@ class HyUCC(desbordante.ucc.UccAlgorithm):
     is_null_equal_null: specify whether two NULLs should be considered equal
     threads: number of threads to use. If 0, then as many threads are used as the hardware can handle concurrently.
     """
+
     def __init__(self) -> None: ...
 
 class PyroUCC(desbordante.ucc.UccAlgorithm):
@@ -21,6 +22,7 @@ class PyroUCC(desbordante.ucc.UccAlgorithm):
     max_lhs: max considered LHS size
     seed: RNG seed
     """
+
     def __init__(self) -> None: ...
 
 Default = HyUCC
