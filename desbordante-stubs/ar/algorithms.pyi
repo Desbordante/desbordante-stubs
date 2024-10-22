@@ -15,6 +15,7 @@ class Apriori(desbordante.ar.ArAlgorithm):
     minsup: minimum support value (between 0 and 1)
     tid_column_index: index of the column where a TID is stored
     """
+
     def __init__(self) -> None: ...
 
 Default = Apriori
