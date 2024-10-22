@@ -8,12 +8,11 @@ init:
 ## Run all formatters and linters in project
 lint:
 	poetry run ruff check desbordante-stubs \
-	& poetry run ruff format --check desbordante-stubs \
-	& poetry run black --check desbordante-stubs
+	& poetry run ruff format --check desbordante-stubs
 
 ## Reformat code
 format:
-	poetry run ruff format desbordante-stubs & poetry run ruff check --fix & poetry run black desbordante-stubs
+	poetry run ruff format desbordante-stubs & poetry run ruff check --fix
 
 ## Generate stubs
 stubs:
