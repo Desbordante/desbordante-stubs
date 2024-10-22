@@ -27,7 +27,7 @@ To check the code with linters and formatters:
 ```bash
 make lint
 ```
-This command runs `ruff` and `black` to ensure the code is properly formatted and follows style guidelines.
+This command runs `ruff` to ensure the code is properly formatted and follows style guidelines.
 
 ### 4. Format the code
 To automatically format the code:

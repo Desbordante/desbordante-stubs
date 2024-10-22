@@ -16,7 +16,6 @@ desbordante = "^2.1.0"
 [tool.poetry.group.dev.dependencies]
 pybind11-stubgen = "^2.4.2"
 ruff = "^0.7.0"
-black = "^24.10.0"
 pre-commit = "^4.0.1"
 
 [build-system]
