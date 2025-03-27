@@ -10,15 +10,24 @@ from . import aind
 from . import ar
 from . import cfd
 from . import data_types
+from . import dc
+from . import dc_verification
 from . import dd
 from . import dynamic_fd_verification
 from . import fd
 from . import fd_verification
 from . import gfd_verification
 from . import ind
+from . import ind_verification
+from . import md
 from . import mfd_verification
+from . import nar
+from . import nd
+from . import nd_verification
 from . import od
 from . import pfd
+from . import pfd_verification
+from . import sfd
 from . import statistics
 from . import ucc
 from . import ucc_verification
@@ -30,20 +39,30 @@ __all__ = [
     "afd",
     "afd_verification",
     "aind",
+    "aind_verification",
     "ar",
     "aucc_verification",
     "cfd",
     "data_types",
+    "dc",
+    "dc_verification",
     "dd",
     "dynamic_fd_verification",
     "fd",
     "fd_verification",
     "gfd_verification",
     "ind",
+    "ind_verification",
+    "md",
     "mfd_verification",
+    "nar",
+    "nd",
+    "nd_verification",
     "od",
     "od_module",
     "pfd",
+    "pfd_verification",
+    "sfd",
     "statistics",
     "ucc",
     "ucc_verification",
@@ -54,12 +73,10 @@ class Algorithm:
         """
         Process data.
         """
-
     def get_description(self, option_name: str) -> str:
         """
         Get description of an option.
         """
-
     def get_needed_options(self) -> set[str]:
         """
         Get names of options the algorithm requires to be set at the moment.
@@ -68,27 +85,22 @@ class Algorithm:
         algorithms' options using keyword arguments of the load_data and execute
         methods.
         """
-
     def get_option_type(self, option_name: str) -> tuple:
         """
         Get info about the option's type.
         """
-
     def get_opts(self) -> dict[str, typing.Any]:
         """
         Get option values represented as the closest Python type
         """
-
     def get_possible_options(self) -> set[str]:
         """
         Get names of options the algorithm may request.
         """
-
     def load_data(self, **kwargs) -> None:
         """
         Load data for execution
         """
-
     def set_option(self, option_name: str, option_value: typing.Any = None) -> None:
         """
         Set option value. Passing None means setting the default value.
@@ -102,5 +114,6 @@ class ConfigurationError(ValueError):
     pass
 
 afd_verification = fd_verification
+aind_verification = ind_verification
 aucc_verification = ucc_verification
 od_module = od

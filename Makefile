@@ -16,7 +16,7 @@ format:
 
 ## Generate stubs
 stubs:
-	pybind11-stubgen desbordante
+	poetry run pybind11-stubgen desbordante
 	@if [ -d "desbordante-stubs" ]; then rm -rf desbordante-stubs; fi
 	@if [ -d "stubs/desbordante" ]; then mv stubs/desbordante desbordante-stubs; fi
 	rm -rf stubs

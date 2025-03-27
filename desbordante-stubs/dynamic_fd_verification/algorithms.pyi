@@ -9,12 +9,11 @@ class DynamicFDVerifier(desbordante.Algorithm):
     Options:
     table: table processed by the algorithm
     insert: Rows to be inserted into the table using the insert operation
+    lhs_indices: LHS column indices
     delete: Rows to be deleted from the table using the delete operation
     update: Rows to be replaced in the table using the update operation
-    lhs_indices: LHS column indices
     rhs_indices: RHS column indices
     """
-
     def __init__(self) -> None: ...
     def fd_holds(self) -> bool: ...
     def get_error(self) -> float: ...

@@ -1,22 +1,22 @@
 from __future__ import annotations
 import desbordante
-import desbordante.fd_verification
 
-__all__ = ["Default", "FDVerifier"]
+__all__ = ["Default", "PFDVerifier"]
 
-class FDVerifier(desbordante.Algorithm):
+class PFDVerifier(desbordante.Algorithm):
     """
     Options:
     table: table processed by the algorithm
     lhs_indices: LHS column indices
     is_null_equal_null: specify whether two NULLs should be considered equal
+    pfd_error_measure: PFD error measure to use
+    [per_tuple|per_value]
     rhs_indices: RHS column indices
     """
     def __init__(self) -> None: ...
-    def fd_holds(self) -> bool: ...
     def get_error(self) -> float: ...
-    def get_highlights(self) -> list[desbordante.fd_verification.Highlight]: ...
-    def get_num_error_clusters(self) -> int: ...
-    def get_num_error_rows(self) -> int: ...
+    def get_num_violating_clusters(self) -> int: ...
+    def get_num_violating_rows(self) -> int: ...
+    def get_violating_clusters(self) -> list[list[int]]: ...
 
-Default = FDVerifier
+Default = PFDVerifier

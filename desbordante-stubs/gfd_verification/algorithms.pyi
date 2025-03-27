@@ -9,7 +9,6 @@ class EGfdValid(desbordante.gfd_verification.GfdAlgorithm):
     gfd: Path to file with GFD
     graph: Path to dot-file with graph
     """
-
     def __init__(self) -> None: ...
 
 class GfdValid(desbordante.gfd_verification.GfdAlgorithm):
@@ -19,7 +18,6 @@ class GfdValid(desbordante.gfd_verification.GfdAlgorithm):
     graph: Path to dot-file with graph
     threads: number of threads to use. If 0, then as many threads are used as the hardware can handle concurrently.
     """
-
     def __init__(self) -> None: ...
 
 class NaiveGfdValid(desbordante.gfd_verification.GfdAlgorithm):
@@ -28,7 +26,6 @@ class NaiveGfdValid(desbordante.gfd_verification.GfdAlgorithm):
     gfd: Path to file with GFD
     graph: Path to dot-file with graph
     """
-
     def __init__(self) -> None: ...
 
 Default = GfdValid
